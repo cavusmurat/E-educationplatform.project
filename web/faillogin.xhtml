@@ -19,6 +19,7 @@
         <nav Style="width:101% " class="navbar navbar-expand-lg ">
 
             <div class="container-fluid">
+
                 <a href="index.xhtml" class="pull-left"><img src="https://i.hizliresim.com/tehzuvg.png" alt="" /></a> 
 
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,12 +34,9 @@
                             <a class="nav-link active" aria-current="page" href="index.xhtml" style="color: black;">Home</a>
                         </li>
 
-                        <li style="margin-right: 240%;" class="nav-item">                          
-                            <h:form><h:commandButton style="border: none; font-family: sans-serif; margin-right: 25%; 
-                                                      font-weight: bold; background-color:lightsalmon; border-bottom-color: lightsalmon ; color:black "
-                                                         type="submit" class="nav-link" action="#{productController.displayProducts()}" value="Kurslar"/></h:form>
+                        <li style="margin-right: 240%;" class="nav-item">
+                            <a class="nav-link" href="kurslar.xhtml" style="color: black;">Kurslar</a>
                         </li>
-
 
                         <li style="margin-right: 240%;" class="nav-item">
                             <a class="nav-link" href="login.xhtml" style="color: black; width: 30%;">Kaydol/Giriş</a>
@@ -53,6 +51,11 @@
         <div class="logpage-text">
             <main class="form-signin">
                 <h:form>
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Hatalı giriş yaptınız!</strong> Lütfen kullanıcı adı ve şifrenizi kontrol edip tekrar giriş yapmayı deneyin.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <br />
                     <img class="mb-4" src="https://i.hizliresim.com/qjhxlo7.png" alt="" width="300" height="85" />
 
                     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
@@ -70,9 +73,10 @@
                         <label for="floatingPassword" style="color: black;">Password </label>
                     </div>
                     <br />
-                    
-                    <h:commandButton  action="#{loginController.validateUsernamePassword()}" 
-                                     class="w-100 btn btn-lg btn-primary" type="submit" value="Login" />
+
+
+                    <h:commandButton action="#{loginController.validateUsernamePassword()}" class="w-100 btn btn-lg btn-primary" type="submit" value="login" />
+
 
                     <p><br />Not a member yet?</p>
                     <a href="register.xhtml" class="w-100 btn btn-lg btn-primary">Register</a>
@@ -84,4 +88,3 @@
         <script src="js/bootstrap.js"></script> 
     </h:body>
 </html>
-
